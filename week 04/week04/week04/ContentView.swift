@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 
 // MAIN VIEW: holds the two pages as tabs at the bottom
 struct ContentView: View {
