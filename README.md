@@ -1,4 +1,4 @@
-# mobile-app-class
+# molab-2026-ima-darmen
 my projects and hw for the class at IMA NY
 
 - Midterm checklist
