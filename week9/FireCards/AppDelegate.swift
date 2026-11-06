@@ -41,6 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         FirebaseApp.configure() // Add Firebase configuration here
+        AuthenticationService.signIn()
         return true
     }
 

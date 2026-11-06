@@ -96,7 +96,12 @@ class CardRepository: ObservableObject {
     do {
       var newCard = card
       newCard.userId = userId
-      _ = try store.collection(path).addDocument(from: newCard)
+      print("Adding card for userId: '\(userId)'")
+      _ = try store.collection(path).addDocument(from: newCard) { error in
+        if let error = error {
+          print("Error adding card: \(error.localizedDescription)")
+        }
+      }
     } catch {
       fatalError("Unable to add card: \(error.localizedDescription).")
     }
@@ -109,7 +114,11 @@ class CardRepository: ObservableObject {
     // 2
     do {
       // 3
-      try store.collection(path).document(cardId).setData(from: card)
+      try store.collection(path).document(cardId).setData(from: card) { error in
+        if let error = error {
+          print("Error updating card: \(error.localizedDescription)")
+        }
+      }
     } catch {
       fatalError("Unable to update card: \(error.localizedDescription).")
     }
